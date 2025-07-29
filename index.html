@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itthirat Naewla - Hospitality Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><circle cx="200" cy="150" r="2" fill="%23d4af37" opacity="0.3"/><circle cx="800" cy="250" r="3" fill="%23d4af37" opacity="0.2"/><circle cx="1000" cy="400" r="2" fill="%23d4af37" opacity="0.4"/><circle cx="300" cy="600" r="2" fill="%23d4af37" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #d4af37;
+            animation: fadeInUp 1s ease-out 0.5s both, glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #d4af37, 0 0 10px #d4af37; }
+            to { text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37; }
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #d4af37, #f4e4a1);
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 1.5s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #d4af37;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-image {
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(45deg, #d4af37, #f4e4a1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #1a1a1a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+        }
+
+        .about-text {
+            color: #fff;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-info span {
+            color: #d4af37;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .skill-card h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            color: #fff;
+        }
+
+        .skill-card li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-card li:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #d4af37;
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 45%;
+        }
+
+        .experience-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .experience-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #d4af37;
+            border-radius: 50%;
+            top: 2rem;
+        }
+
+        .experience-item:nth-child(odd) .experience-card::before {
+            right: -35px;
+        }
+
+        .experience-item:nth-child(even) .experience-card::before {
+            left: -35px;
+        }
+
+        .experience-card h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card h4 {
+            color: #f4e4a1;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .experience-card p {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card ul {
+            color: #fff;
+            padding-left: 1rem;
+        }
+
+        .experience-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #d4af37;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .experience-timeline::before {
+                left: 20px;
+            }
+
+            .experience-item {
+                width: calc(100% - 40px);
+                left: 40px !important;
+            }
+
+            .experience-card::before {
+                left: -35px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ITTHIRAT NAEWLA</h1>
+            <div class="subtitle">Hospitality Excellence Leader</div>
+            <p>Accomplished hospitality leader with extensive experience driving operational excellence and delivering exceptional guest experiences across luxury and boutique properties.</p>
+            <a href="#about" class="cta-button">Discover More</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+
+                <div class="about-text">
+                    <h3>Professional Summary</h3>
+                    <p>With over two decades of experience in luxury hospitality, I specialize in operational leadership, strategic planning, and delivering exceptional guest experiences. My expertise spans across diverse functions including Food & Beverage, Housekeeping, Sport & Recreation, and Event Management.</p>
+                    <p>Known for strong leadership capabilities and the ability to optimize workflows while leading cross-functional teams. Currently expanding my expertise in financial markets as an independent gold trader, demonstrating my commitment to continuous learning and adaptation.</p>
+                    <div class="contact-info">
+                        <div><span>Location:</span> Bangkok, Thailand</div>
+                        <div><span>Email:</span> neawla@hotmail.com</div>
+                        <div><span>Phone:</span> +66 61 410 7730</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Leadership Excellence</h3>
+                    <ul>
+                        <li>Operational Leadership</li>
+                        <li>Strategic Planning</li>
+                        <li>Team Development</li>
+                        <li>Pre-Opening Expertise</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Technical Expertise</h3>
+                    <ul>
+                        <li>Budget Management</li>
+                        <li>Event Planning & Execution</li>
+                        <li>Marketing Strategy</li>
+                        <li>Hospitality Management Systems</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Languages & Certifications</h3>
+                    <ul>
+                        <li>English (Professional)</li>
+                        <li>Thai (Native)</li>
+                        <li>CTH Level 4 Diploma</li>
+                        <li>BBA in Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Professional Journey</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <h3>Independent Gold Trader</h3>
+                        <h4>Freelance • January 2025 - Present</h4>
+                        <p>Developing robust trading strategies focusing on gold price action, utilizing technical indicators and conducting daily market analysis for optimal trade execution.</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <h3>Director of Operations</h3>
+                        <h4>InterContinental Koh Samui Resort • 2022 - 2025</h4>
+                        <ul>
+                            <li>Directed operations across key departments, leading over 250 staff</li>
+                            <li>Increased guest satisfaction by 15% through service improvements</li>
+                            <li>Achieved 18% F&B revenue boost post-COVID-19</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <h3>Co-Founder</h3>
+                        <h4>Nokhook Production Co., Ltd. • 2019 - 2021</h4>
+                        <ul>
+                            <li>Executed 5+ high-profile events with 87% client satisfaction</li>
+                            <li>Boosted event profitability by 45% through innovation</li>
+                            <li>Increased social media engagement by 38%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <h3>Director of Food & Beverage</h3>
+                        <h4>Siam@Siam Design Hotel Bangkok • 2018 - 2019</h4>
+                        <ul>
+                            <li>Launched TAAN authentic Thai restaurant (Michelin star)</li>
+                            <li>Transformed rooftop concept with 22% revenue growth</li>
+                            <li>Achieved 17% increase in positive guest reviews</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <h3>Director of F&B (Pre-Opening)</h3>
+                        <h4>Holiday Inn & Suites Rayong • 2017 - 2018</h4>
+                        <ul>
+                            <li>Led pre-opening project exceeding revenue projections by 15%</li>
+                            <li>Managed team of 80 staff during grand opening</li>
+                            <li>Ensured alignment with IHG® brand standards</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <h3>Food & Beverage Manager</h3>
+                        <h4>Crowne Plaza Bangkok Lumpini Park • 2011 - 2016</h4>
+                        <ul>
+                            <li>Progressed through multiple F&B leadership roles</li>
+                            <li>Delivered 15% reduction in operational costs through optimization</li>
+                            <li>Developed training initiatives increasing team productivity by 18%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <h3>Cluster Restaurant Manager</h3>
+                        <h4>Banyan Tree Hotel Bangkok • 2005 - 2011</h4>
+                        <ul>
+                            <li>Managed multiple dining outlets with combined revenue of 175M annually</li>
+                            <li>Led pre-opening of two restaurants achieving 86% occupancy within first three months</li>
+                            <li>Established operational standards for luxury dining experiences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to discuss opportunities in hospitality leadership or trading ventures.</p>
+                    <p>Email: neawla@hotmail.com</p>
+                    <p>Phone: +66 61 410 7730</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p>932/93 Toedthai Road, Bangkae<br>
+                    Bangkok 10160, Thailand</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Expertise</h3>
+                    <p>Hospitality Operations<br>
+                    Strategic Leadership<br>
+                    Financial Trading<br>
+                    Pre-Opening Specialist</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Itthirat Naewla. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and timeline items
+        document.querySelectorAll('.skill-card, .experience-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
