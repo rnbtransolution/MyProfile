@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itthirat Naewla - CV</title>
+    <title>Itthirat Naewla - Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
         
         * {
             margin: 0;
@@ -13,530 +13,1040 @@
             box-sizing: border-box;
         }
         
-        @media print {
-            body { -webkit-print-color-adjust: exact; }
-            .page-break { page-break-before: always; }
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.4;
-            color: #2c3e50;
-            background: #f8f9fa;
-            margin: 0;
-            padding: 15px;
-            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 210mm;
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transform: translateY(-100%);
+            animation: slideDown 1s ease 0.5s forwards;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.5s forwards;
+        }
+        
+        .hero .description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 2s forwards;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 2.5s forwards;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
             background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            color: #333;
+            transform: translateY(-2px);
+        }
+        
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
         
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 30px;
-            position: relative;
-        }
-        
-        .header::before {
-            content: '';
+        .particle {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 150px;
-            background: rgba(255,255,255,0.05);
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            transform: translate(30px, -30px);
+            animation: float 6s ease-in-out infinite;
         }
         
-        .header-content {
-            position: relative;
-            z-index: 2;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
         
-        .name {
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: -0.5px;
-        }
-        
-        .title {
-            font-size: 1.1em;
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px;
-            font-size: 0.9em;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-icon {
-            width: 16px;
-            height: 16px;
-            opacity: 0.8;
-        }
-        
-        .main-content {
-            padding: 25px;
-        }
-        
+        /* Sections */
         .section {
-            margin-bottom: 25px;
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
         .section-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #3498db;
-            position: relative;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: white;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
         
-        .section-title::after {
+        .section-title.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* About Section */
+        .about {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+        
+        .about-text.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat {
+            text-align: center;
+            color: white;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .stat.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f093fb;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
             content: '';
             position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: #e74c3c;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            transform: translateX(-50%);
         }
         
-        .summary {
-            font-size: 0.95em;
-            line-height: 1.5;
-            color: #34495e;
-            background: #ecf0f1;
-            padding: 20px;
-            border-radius: 6px;
-            border-left: 3px solid #3498db;
-        }
-        
-        .experience-item {
-            margin-bottom: 20px;
-            padding: 18px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border-left: 3px solid #27ae60;
+        .timeline-item {
             position: relative;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
         
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
+        .timeline-item.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 50%;
+            padding-right: 2rem;
+            text-align: right;
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
         }
         
         .job-title {
-            font-size: 1.1em;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 3px;
+            color: white;
+            margin-bottom: 0.5rem;
         }
         
         .company {
-            font-size: 1em;
-            font-weight: 500;
-            color: #3498db;
-            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: #f093fb;
+            margin-bottom: 0.5rem;
         }
         
         .duration {
-            font-size: 0.85em;
-            color: #7f8c8d;
-            background: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            border: 1px solid #bdc3c7;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
         }
         
         .achievements {
             list-style: none;
-            margin-top: 10px;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .achievements li {
-            margin-bottom: 5px;
-            padding-left: 15px;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
             position: relative;
-            line-height: 1.4;
-            font-size: 0.9em;
         }
         
         .achievements li::before {
             content: '▸';
             position: absolute;
             left: 0;
-            color: #3498db;
-            font-weight: bold;
+            color: #667eea;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: rgba(255, 255, 255, 0.05);
         }
         
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
-        .skill-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 3px solid #9b59b6;
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
         }
         
-        .skill-category h4 {
-            font-size: 1em;
+        .skill-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-title {
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 10px;
+            color: white;
+            margin-bottom: 1rem;
         }
         
         .skill-list {
             list-style: none;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: left;
         }
         
         .skill-list li {
-            margin-bottom: 4px;
-            padding-left: 12px;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
             position: relative;
-            font-size: 0.85em;
         }
         
         .skill-list li::before {
             content: '•';
             position: absolute;
             left: 0;
-            color: #9b59b6;
-            font-weight: bold;
+            color: #f093fb;
         }
         
-        .education-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 3px solid #f39c12;
-            margin-bottom: 12px;
+        /* Contact Section */
+        .contact {
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
         
-        .degree {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 3px;
-            font-size: 0.95em;
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            color: white;
         }
         
-        .institution {
-            color: #7f8c8d;
-            font-size: 0.85em;
-        }
-        
-        .two-column {
+        .contact-info {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .contact-item.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f093fb;
+        }
+        
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .two-column {
-                grid-template-columns: 1fr;
+            .nav-links {
+                display: none;
             }
             
-            .contact-info {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            .job-header {
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin: 0;
+                margin-left: 50px;
+                padding: 1.5rem;
+                text-align: left;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
                 flex-direction: column;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
+                align-items: center;
             }
         }
         
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-                font-size: 13px;
+        /* Animations */
+        @keyframes slideDown {
+            to { transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-            
-            .container {
-                box-shadow: none;
-                border-radius: 0;
-                max-width: none;
-            }
-            
-            .main-content {
-                padding: 20px;
-            }
-            
-            .header {
-                padding: 25px;
-            }
-            
-            .page-break {
-                page-break-before: always;
-            }
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(102, 126, 234, 0.8);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(100px);
+            z-index: 1000;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-top:hover {
+            background: rgba(102, 126, 234, 1);
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <h1 class="name">ITTHIRAT NAEWLA</h1>
-                <p class="title">Gold Trader & Founder of R&B Transolution</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <span>neawla@hotmail.com</span>
+    <div class="animated-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">Itthirat Naewla</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles">
+            <div class="particle" style="left: 20%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 30%; top: 60%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 70%; top: 40%; animation-delay: 5s;"></div>
+        </div>
+        <div class="hero-content">
+            <h1>ITTHIRAT NAEWLA</h1>
+            <p class="subtitle">Gold Trader & Founder of R&B Transolution</p>
+            <p class="description">24+ years of hospitality excellence combined with financial market expertise, transforming F&B businesses through strategic consulting and operational excellence.</p>
+            <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary">Discover My Journey</a>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Accomplished hospitality leader with extensive experience driving operational excellence and delivering exceptional guest experiences across luxury and boutique properties. Currently leveraging financial market expertise as an independent gold trader while founding R&B Transolution to transform F&B businesses through strategic consulting and operational excellence.</p>
+                    <p>Known for strong leadership, strategic planning, and the ability to oversee diverse functions including Food & Beverage, Housekeeping, Sport & Recreation, and Event Management. Passionate about operational excellence and continuous learning.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">24+</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+66 61 410 7730</span>
+                    <div class="stat">
+                        <div class="stat-number">250+</div>
+                        <div class="stat-label">Team Members Led</div>
                     </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>932/93 Toedthai Road, Bangkae, Bangkok 10160</span>
+                    <div class="stat">
+                        <div class="stat-number">175M</div>
+                        <div class="stat-label">THB Revenue Managed</div>
                     </div>
-                    <div class="contact-item">
-                        <span>🎂</span>
-                        <span>27 February 1983</span>
+                    <div class="stat">
+                        <div class="stat-number">87%</div>
+                        <div class="stat-label">Client Satisfaction</div>
                     </div>
                 </div>
             </div>
-        </header>
-
-        <main class="main-content">
-            <section class="section">
-                <h2 class="section-title">Professional Summary</h2>
-                <div class="summary">
-                    Accomplished hospitality leader with 24+ years of extensive experience driving operational excellence and delivering exceptional guest experiences across luxury and boutique properties. Currently leveraging financial market expertise as an independent gold trader while founding R&B Transolution to transform F&B businesses through strategic consulting and operational excellence. Known for strong leadership, strategic planning, and the ability to oversee diverse functions including Food & Beverage, Housekeeping, Sport & Recreation, and Event Management.
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Gold Trader & Founder of R&B Transolution</div>
-                            <div class="company">Independent Trading & Business Consulting</div>
-                        </div>
-                        <div class="duration">January 2025 - Present</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Founded R&B Transolution, specializing in F&B business transformation through strategic consulting, SOP development, and operational excellence</li>
-                        <li>Developed robust gold trading strategies utilizing advanced technical indicators including moving averages, RSI, ATR, and support/resistance levels</li>
-                        <li>Managed risk exposure effectively, ensuring sustainable account growth and capital preservation</li>
-                        <li>Conducted comprehensive daily market analysis to identify high-probability trade setups and optimize entry/exit points</li>
-                        <li>Applied hospitality industry expertise to create innovative consulting solutions for restaurant and hotel operations</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Director of Operations</div>
-                            <div class="company">InterContinental Koh Samui Resort</div>
-                        </div>
-                        <div class="duration">January 2022 - January 2025</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Directed operations across key departments, leading over 250 staff and ensuring smooth day-to-day performance</li>
-                        <li>Acted as General Manager for 6 months, maintaining business continuity and operational excellence</li>
-                        <li>Increased guest satisfaction by 15% through service quality improvements and streamlined workflows</li>
-                        <li>Revitalized Food & Beverage post-COVID-19, achieving an 18% revenue boost and 13% employee engagement growth</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Co-Founder</div>
-                            <div class="company">Nokhook Production Co., Ltd.</div>
-                        </div>
-                        <div class="duration">September 2019 - July 2021</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Organized and executed over 5 high-profile events, including corporate conferences, weddings, and product launches, achieving 87% client satisfaction rate</li>
-                        <li>Led a team of 20 event professionals, ensuring seamless coordination and execution across multiple venues</li>
-                        <li>Boosted event profitability by 45% through innovative planning and resource optimization</li>
-                        <li>Enhanced brand awareness, increasing social media engagement by 38% through targeted marketing campaigns</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Director of Food & Beverage</div>
-                            <div class="company">Siam@Siam Design Hotel Bangkok</div>
-                        </div>
-                        <div class="duration">November 2018 - August 2019</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Played pivotal role in conceptualization and launch of TAAN, an authentic Thai restaurant, achieving Michelin star recognition</li>
-                        <li>Transformed rooftop restaurant concept, resulting in 22% revenue growth and industry recognition for culinary excellence</li>
-                        <li>Elevated team performance through service enhancements, achieving 17% increase in positive guest reviews</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Director of Food & Beverage (Pre-Opening)</div>
-                            <div class="company">Holiday Inn & Suites Rayong City Centre</div>
-                        </div>
-                        <div class="duration">May 2017 - October 2018</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Led pre-opening project of banquet venue and restaurant conceptualization, generating 15% above projected revenue in first quarter</li>
-                        <li>Delivered seamless grand opening, managing team of 80 staff and ensuring alignment with IHG® brand standards</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Assistant Director of Food & Beverage</div>
-                            <div class="company">AVANI+ Riverside Bangkok</div>
-                        </div>
-                        <div class="duration">August 2016 - May 2017</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Oversaw operations for restaurant & bar and large banquet facility, increasing event profit by 8%</li>
-                        <li>Enhanced guest satisfaction scores by 16% through innovative service training programs</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Food & Beverage Manager / Assistant Manager / Restaurant Manager</div>
-                            <div class="company">Crowne Plaza Bangkok Lumpini Park</div>
-                        </div>
-                        <div class="duration">February 2011 - August 2016</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Progressed through multiple leadership roles demonstrating consistent career advancement</li>
-                        <li>Delivered 15% reduction in operational costs by optimizing inventory and procurement processes</li>
-                        <li>Developed brand standard training initiatives that increased team productivity by 18%</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Cluster Restaurant Manager</div>
-                            <div class="company">Banyan Tree Hotel Bangkok</div>
-                        </div>
-                        <div class="duration">November 2005 - February 2011</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Managed multiple dining outlets with combined annual revenue of approximately 175 million THB</li>
-                        <li>Led pre-opening of two restaurants, achieving 86% occupancy within first three months</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Restaurant Operations</div>
-                            <div class="company">Mandarin Oriental Dhara Dhevi Chiang Mai</div>
-                        </div>
-                        <div class="duration">November 2004 - October 2005</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Contributed to pre-opening of luxury resort, focusing on fine dining Cantonese restaurant setup</li>
-                        <li>Supported operational readiness and team training initiatives for successful launch</li>
-                    </ul>
-                </div>
-            </section>
-
-            <div class="two-column">
-                <section class="section">
-                    <h2 class="section-title">Core Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Leadership & Operations</h4>
-                            <ul class="skill-list">
-                                <li>Operational Leadership & Team Management</li>
-                                <li>Strategic Planning & Implementation</li>
-                                <li>Pre-Opening Operations Expertise</li>
-                                <li>Guest Experience Enhancement</li>
-                                <li>Cross-functional Team Leadership</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>Business & Financial</h4>
-                            <ul class="skill-list">
-                                <li>Budget Management & Financial Planning</li>
-                                <li>Financial Markets & Trading</li>
-                                <li>Business Consulting & SOP Development</li>
-                                <li>Stakeholder Management</li>
-                                <li>Revenue Optimization</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>Specialized Expertise</h4>
-                            <ul class="skill-list">
-                                <li>F&B Operations & Transformation</li>
-                                <li>Event Planning & Execution</li>
-                                <li>Marketing Strategy for Hospitality</li>
-                                <li>Brand Standards Implementation</li>
-                                <li>Technical Analysis & Risk Management</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">Education & Certifications</h2>
-                    <div class="education-item">
-                        <div class="degree">CTH Level 4: Diploma in Hospitality Leadership</div>
-                        <div class="institution">Confederation of Tourism and Hospitality</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="degree">Bachelor of Business Administration in Management</div>
-                        <div class="institution">Bangkok Thonburi University (In Progress)</div>
-                    </div>
-                    
-                    <h2 class="section-title" style="margin-top: 30px;">Languages</h2>
-                    <div class="skill-category">
-                        <ul class="skill-list">
-                            <li><strong>Thai:</strong> Native Proficiency</li>
-                            <li><strong>English:</strong> Professional Working Proficiency</li>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Gold Trader & Founder of R&B Transolution</h3>
+                        <p class="company">Independent Trading & Business Consulting</p>
+                        <p class="duration">January 2025 - Present</p>
+                        <ul class="achievements">
+                            <li>Founded R&B Transolution for F&B business transformation</li>
+                            <li>Developed robust gold trading strategies with advanced technical indicators</li>
+                            <li>Applied hospitality expertise to create innovative consulting solutions</li>
                         </ul>
                     </div>
-                </section>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Director of Operations</h3>
+                        <p class="company">InterContinental Koh Samui Resort</p>
+                        <p class="duration">January 2022 - January 2025</p>
+                        <ul class="achievements">
+                            <li>Led 250+ staff with 15% guest satisfaction increase</li>
+                            <li>Acted as General Manager for 6 months</li>
+                            <li>Revitalized F&B post-COVID with 18% revenue boost</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Co-Founder</h3>
+                        <p class="company">Nokhook Production Co., Ltd.</p>
+                        <p class="duration">September 2019 - July 2021</p>
+                        <ul class="achievements">
+                            <li>Executed 5+ high-profile events with 87% client satisfaction</li>
+                            <li>Boosted event profitability by 45%</li>
+                            <li>Increased social media engagement by 38%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Director of Food & Beverage</h3>
+                        <p class="company">Siam@Siam Design Hotel Bangkok</p>
+                        <p class="duration">November 2018 - August 2019</p>
+                        <ul class="achievements">
+                            <li>Led TAAN restaurant to Michelin star recognition</li>
+                            <li>Transformed rooftop concept with 22% revenue growth</li>
+                            <li>Achieved 17% increase in positive guest reviews</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Multiple Leadership Roles</h3>
+                        <p class="company">Holiday Inn, AVANI+, Crowne Plaza, Banyan Tree</p>
+                        <p class="duration">November 2004 - October 2018</p>
+                        <ul class="achievements">
+                            <li>Managed outlets with 175M THB annual revenue</li>
+                            <li>Led pre-opening projects exceeding projections by 15%</li>
+                            <li>Achieved 86% occupancy within first 3 months</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🏆</div>
+                    <h3 class="skill-title">Leadership & Operations</h3>
+                    <ul class="skill-list">
+                        <li>Operational Leadership & Team Management</li>
+                        <li>Strategic Planning & Implementation</li>
+                        <li>Pre-Opening Operations Expertise</li>
+                        <li>Guest Experience Enhancement</li>
+                        <li>Cross-functional Team Leadership</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">💰</div>
+                    <h3 class="skill-title">Business & Financial</h3>
+                    <ul class="skill-list">
+                        <li>Budget Management & Financial Planning</li>
+                        <li>Financial Markets & Trading</li>
+                        <li>Business Consulting & SOP Development</li>
+                        <li>Stakeholder Management</li>
+                        <li>Revenue Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <h3 class="skill-title">Specialized Expertise</h3>
+                    <ul class="skill-list">
+                        <li>F&B Operations & Transformation</li>
+                        <li>Event Planning & Execution</li>
+                        <li>Marketing Strategy for Hospitality</li>
+                        <li>Brand Standards Implementation</li>
+                        <li>Technical Analysis & Risk Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <p>Ready to transform your F&B business or discuss trading strategies? Let's start a conversation.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <h4>Email</h4>
+                        <p>neawla@hotmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <h4>Phone</h4>
+                        <p>+66 61 410 7730</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <h4>Location</h4>
+                        <p>Bangkok, Thailand</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
+    
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.section-title, .about-text, .stat, .timeline-item, .skill-card, .contact-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add staggered animation delay to timeline items
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.2}s`;
+        });
+        
+        // Add staggered animation delay to skill cards
+        document.querySelectorAll('.skill-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.3}s`;
+        });
+        
+        // Add staggered animation delay to stats
+        document.querySelectorAll('.stat').forEach((stat, index) => {
+            stat.style.transitionDelay = `${index * 0.2}s`;
+        });
+        
+        // Add staggered animation delay to contact items
+        document.querySelectorAll('.contact-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.2}s`;
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+        
+        // Dynamic particle movement
+        document.querySelectorAll('.particle').forEach(particle => {
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            
+            // Add random animation duration
+            particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        });
+        
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            element.style.opacity = '1';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+        
+        // Initialize typing effect after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const heroTitle = document.querySelector('.hero h1');
+                if (heroTitle) {
+                    typeWriter(heroTitle, 'ITTHIRAT NAEWLA', 150);
+                }
+            }, 1000);
+        });
+        
+        // Add hover effects to timeline items
+        document.querySelectorAll('.timeline-content').forEach(content => {
+            content.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.15)';
+                this.style.borderColor = 'rgba(102, 126, 234, 0.5)';
+            });
+            
+            content.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            });
+        });
+        
+        // Add counter animation for stats
+        function animateCounters() {
+            document.querySelectorAll('.stat-number').forEach(counter => {
+                const target = parseInt(counter.innerText.replace(/\D/g, ''));
+                const suffix = counter.innerText.replace(/\d/g, '');
+                let current = 0;
+                const increment = target / 100;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.innerText = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = Math.floor(current) + suffix;
+                    }
+                }, 20);
+            });
+        }
+        
+        // Trigger counter animation when stats section is in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Add mobile menu toggle
+        function createMobileMenu() {
+            const nav = document.querySelector('.nav-container');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Create hamburger menu button
+            const hamburger = document.createElement('button');
+            hamburger.className = 'hamburger';
+            hamburger.innerHTML = '☰';
+            hamburger.style.cssText = `
+                display: none;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: #2c3e50;
+                cursor: pointer;
+                
+                @media (max-width: 768px) {
+                    display: block !important;
+                }
+            `;
+            
+            nav.appendChild(hamburger);
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-active');
+            });
+        }
+        
+        // Initialize mobile menu
+        createMobileMenu();
+        
+        // Add CSS for mobile menu
+        const mobileMenuCSS = `
+            @media (max-width: 768px) {
+                .hamburger {
+                    display: block !important;
+                }
+                
+                .nav-links {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.95);
+                    backdrop-filter: blur(10px);
+                    flex-direction: column;
+                    padding: 2rem;
+                    transform: translateY(-100%);
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                    pointer-events: none;
+                }
+                
+                .nav-links.mobile-active {
+                    transform: translateY(0);
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = mobileMenuCSS;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
