@@ -31,7 +31,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background: linear-gradient(-45deg, #1a1a1a, #2d5016, #333333, #1a1a1a);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             z-index: -1;
@@ -54,6 +54,7 @@
             padding: 1rem 0;
             transform: translateY(-100%);
             animation: slideDown 1s ease 0.5s forwards;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
         
         .nav-container {
@@ -68,7 +69,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2c3e50;
+            color: #1a1a1a;
         }
         
         .nav-links {
@@ -79,14 +80,14 @@
         
         .nav-links a {
             text-decoration: none;
-            color: #2c3e50;
+            color: #1a1a1a;
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
         }
         
         .nav-links a:hover {
-            color: #667eea;
+            color: #2d5016;
         }
         
         .nav-links a::after {
@@ -96,7 +97,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #667eea;
+            background: #d4af37;
             transition: width 0.3s ease;
         }
         
@@ -164,16 +165,16 @@
         }
         
         .btn-primary {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(212, 175, 55, 0.9);
             color: white;
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.5);
         }
         
         .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(212, 175, 55, 1);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
         
         .btn-secondary {
@@ -184,7 +185,7 @@
         
         .btn-secondary:hover {
             background: white;
-            color: #333;
+            color: #1a1a1a;
             transform: translateY(-2px);
         }
         
@@ -240,7 +241,7 @@
         
         /* About Section */
         .about {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(45, 80, 22, 0.1);
             backdrop-filter: blur(10px);
         }
         
@@ -288,7 +289,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #f093fb;
+            color: #d4af37;
         }
         
         .stat-label {
@@ -298,7 +299,7 @@
         
         /* Experience Section */
         .experience {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.2);
         }
         
         .timeline {
@@ -314,7 +315,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
+            background: linear-gradient(to bottom, #d4af37, #2d5016);
             transform: translateX(-50%);
         }
         
@@ -347,12 +348,14 @@
             backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(105, 105, 105, 0.3);
             transition: transform 0.3s ease;
         }
         
         .timeline-content:hover {
             transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.5);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         .timeline-dot {
@@ -361,10 +364,10 @@
             top: 2rem;
             width: 20px;
             height: 20px;
-            background: #667eea;
+            background: #d4af37;
             border-radius: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
         }
         
         .job-title {
@@ -376,13 +379,13 @@
         
         .company {
             font-size: 1.1rem;
-            color: #f093fb;
+            color: #d4af37;
             margin-bottom: 0.5rem;
         }
         
         .duration {
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 1rem;
         }
         
@@ -401,12 +404,12 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: #2d5016;
         }
         
         /* Skills Section */
         .skills {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(105, 105, 105, 0.1);
         }
         
         .skills-grid {
@@ -420,7 +423,7 @@
             backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(105, 105, 105, 0.3);
             text-align: center;
             transition: all 0.3s ease;
             opacity: 0;
@@ -434,7 +437,8 @@
         
         .skill-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(212, 175, 55, 0.5);
         }
         
         .skill-icon {
@@ -465,12 +469,12 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #f093fb;
+            color: #d4af37;
         }
         
         /* Contact Section */
         .contact {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             text-align: center;
         }
         
@@ -492,7 +496,7 @@
             backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(105, 105, 105, 0.3);
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(30px);
@@ -505,12 +509,13 @@
         
         .contact-item:hover {
             transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.5);
         }
         
         .contact-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #f093fb;
+            color: #d4af37;
         }
         
         /* Mobile Responsiveness */
@@ -577,7 +582,7 @@
             right: 2rem;
             width: 50px;
             height: 50px;
-            background: rgba(102, 126, 234, 0.8);
+            background: rgba(212, 175, 55, 0.8);
             border: none;
             border-radius: 50%;
             color: white;
@@ -595,7 +600,7 @@
         }
         
         .scroll-top:hover {
-            background: rgba(102, 126, 234, 1);
+            background: rgba(212, 175, 55, 1);
             transform: translateY(-3px);
         }
     </style>
@@ -938,12 +943,12 @@
         document.querySelectorAll('.timeline-content').forEach(content => {
             content.addEventListener('mouseenter', function() {
                 this.style.background = 'rgba(255, 255, 255, 0.15)';
-                this.style.borderColor = 'rgba(102, 126, 234, 0.5)';
+                this.style.borderColor = 'rgba(212, 175, 55, 0.5)';
             });
             
             content.addEventListener('mouseleave', function() {
                 this.style.background = 'rgba(255, 255, 255, 0.1)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                this.style.borderColor = 'rgba(105, 105, 105, 0.3)';
             });
         });
         
