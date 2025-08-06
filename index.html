@@ -105,7 +105,7 @@
             width: 100%;
         }
         
-        /* Hero Section */
+        /* Hero Section with Background Image */
         .hero {
             height: 100vh;
             display: flex;
@@ -114,6 +114,10 @@
             text-align: center;
             color: white;
             position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('your-hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         
         .hero-content {
@@ -250,6 +254,33 @@
             grid-template-columns: 1fr 2fr;
             gap: 4rem;
             align-items: center;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        
+        .about-image img.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .about-image img:hover {
+            transform: scale(1.05);
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
         }
         
         .about-text {
@@ -537,6 +568,15 @@
                 gap: 2rem;
             }
             
+            .about-image {
+                order: -1;
+            }
+            
+            .about-image img {
+                max-width: 250px;
+                height: 300px;
+            }
+            
             .timeline::before {
                 left: 20px;
             }
@@ -560,6 +600,31 @@
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .hamburger {
+                display: block !important;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+            }
+            
+            .nav-links.mobile-active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
             }
         }
         
@@ -648,26 +713,31 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>Accomplished hospitality leader with extensive experience driving operational excellence and delivering exceptional guest experiences across luxury and boutique properties. Currently leveraging financial market expertise as an independent gold trader while founding R&B Transolution to transform F&B businesses through strategic consulting and operational excellence.</p>
-                    <p>Known for strong leadership, strategic planning, and the ability to oversee diverse functions including Food & Beverage, Housekeeping, Sport & Recreation, and Event Management. Passionate about operational excellence and continuous learning.</p>
+                <div class="about-image">
+                    <img src="your-profile-photo.jpg" alt="Itthirat Naewla - Professional Photo" />
                 </div>
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">24+</div>
-                        <div class="stat-label">Years Experience</div>
+                <div class="about-text-wrapper">
+                    <div class="about-text">
+                        <p>Accomplished hospitality leader with extensive experience driving operational excellence and delivering exceptional guest experiences across luxury and boutique properties. Currently leveraging financial market expertise as an independent gold trader while founding R&B Transolution to transform F&B businesses through strategic consulting and operational excellence.</p>
+                        <p>Known for strong leadership, strategic planning, and the ability to oversee diverse functions including Food & Beverage, Housekeeping, Sport & Recreation, and Event Management. Passionate about operational excellence and continuous learning.</p>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">250+</div>
-                        <div class="stat-label">Team Members Led</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">175M</div>
-                        <div class="stat-label">THB Revenue Managed</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">87%</div>
-                        <div class="stat-label">Client Satisfaction</div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">24+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">250+</div>
+                            <div class="stat-label">Team Members Led</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">175M</div>
+                            <div class="stat-label">THB Revenue Managed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">87%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -847,7 +917,7 @@
         }, observerOptions);
         
         // Observe all animated elements
-        document.querySelectorAll('.section-title, .about-text, .stat, .timeline-item, .skill-card, .contact-item').forEach(el => {
+        document.querySelectorAll('.section-title, .about-text, .stat, .timeline-item, .skill-card, .contact-item, .about-image img').forEach(el => {
             observer.observe(el);
         });
         
@@ -1008,10 +1078,6 @@
                 font-size: 1.5rem;
                 color: #2c3e50;
                 cursor: pointer;
-                
-                @media (max-width: 768px) {
-                    display: block !important;
-                }
             `;
             
             nav.appendChild(hamburger);
@@ -1019,44 +1085,146 @@
             hamburger.addEventListener('click', () => {
                 navLinks.classList.toggle('mobile-active');
             });
+            
+            // Close menu when clicking on links
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-active');
+                });
+            });
         }
         
         // Initialize mobile menu
         createMobileMenu();
         
-        // Add CSS for mobile menu
-        const mobileMenuCSS = `
-            @media (max-width: 768px) {
-                .hamburger {
-                    display: block !important;
-                }
-                
-                .nav-links {
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    width: 100%;
-                    background: rgba(255, 255, 255, 0.95);
-                    backdrop-filter: blur(10px);
-                    flex-direction: column;
-                    padding: 2rem;
-                    transform: translateY(-100%);
-                    opacity: 0;
-                    transition: all 0.3s ease;
-                    pointer-events: none;
-                }
-                
-                .nav-links.mobile-active {
-                    transform: translateY(0);
-                    opacity: 1;
-                    pointer-events: all;
-                }
-            }
-        `;
+        // Add image lazy loading
+        function lazyLoadImages() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
         
-        const style = document.createElement('style');
-        style.textContent = mobileMenuCSS;
-        document.head.appendChild(style);
+        // Initialize lazy loading
+        lazyLoadImages();
+        
+        // Add smooth reveal animations on scroll
+        function addScrollReveal() {
+            const revealElements = document.querySelectorAll('.timeline-item, .skill-card, .contact-item');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0s';
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            revealElements.forEach(el => revealObserver.observe(el));
+        }
+        
+        // Initialize scroll reveal
+        addScrollReveal();
+        
+        // Add performance optimization
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+            
+            ticking = false;
+        }
+        
+        function requestParallaxUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        // Optimized scroll listener
+        window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+        
+        // Preload critical images
+        function preloadImages() {
+            const imageUrls = [
+                'your-profile-photo.jpg',
+                'your-hero-image.jpg'
+            ];
+            
+            imageUrls.forEach(url => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = url;
+                document.head.appendChild(link);
+            });
+        }
+        
+        // Initialize preloading
+        preloadImages();
+        
+        // Add error handling for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                // Fallback to placeholder if image fails to load
+                this.src = 'https://via.placeholder.com/300x400/2d5016/ffffff?text=Photo+Coming+Soon';
+                this.alt = 'Profile photo placeholder';
+            });
+        });
+        
+        // Add loading states
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            
+            // Trigger entrance animations
+            setTimeout(() => {
+                document.querySelectorAll('.hero-content > *').forEach((el, index) => {
+                    el.style.animationDelay = `${index * 0.2}s`;
+                });
+            }, 500);
+        });
+        
+        // Add responsive navigation behavior
+        function handleNavigation() {
+            const nav = document.querySelector('.nav');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    nav.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    nav.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            }, { passive: true });
+        }
+        
+        // Initialize responsive navigation
+        handleNavigation();
     </script>
 </body>
 </html>
