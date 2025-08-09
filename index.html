@@ -435,7 +435,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: #2d5016;
+            color: white;
         }
         
         /* Skills Section */
@@ -500,7 +500,7 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #d4af37;
+            color: white;
         }
         
         /* Contact Section */
@@ -546,7 +546,7 @@
         .contact-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #d4af37;
+            color: white;
         }
         
         /* Mobile Responsiveness */
@@ -668,12 +668,36 @@
             background: rgba(212, 175, 55, 1);
             transform: translateY(-3px);
         }
+
+        /* Override specific icons with monochrome symbols for skills */
+        .skill-card:nth-child(1) .skill-icon::before {
+            content: '💼'; 
+        }
+        .skill-card:nth-child(2) .skill-icon::before {
+            content: '📈'; 
+        }
+        .skill-card:nth-child(3) .skill-icon::before {
+            content: '⚙️'; 
+        }
+
+        /* Override specific icons with modern monochrome symbols for contact */
+        .contact-item:nth-child(1) .contact-icon::before {
+            content: '✉️';
+        }
+        .contact-item:nth-child(2) .contact-icon::before {
+            content: '📞';
+        }
+        .contact-item:nth-child(3) .contact-icon::before {
+            content: '📍';
+        }
+        .contact-item:nth-child(4) .contact-icon::before {
+            content: '🔗';
+        }
     </style>
 </head>
 <body>
     <div class="animated-bg"></div>
     
-    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <div class="logo">Itthirat Naewla</div>
@@ -687,7 +711,6 @@
         </div>
     </nav>
     
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="particles">
             <div class="particle" style="left: 20%; animation-delay: 0s;"></div>
@@ -708,7 +731,6 @@
         </div>
     </section>
     
-    <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -744,7 +766,6 @@
         </div>
     </section>
     
-    <!-- Experience Section -->
     <section id="experience" class="section experience">
         <div class="container">
             <h2 class="section-title">Professional Journey</h2>
@@ -822,13 +843,12 @@
         </div>
     </section>
     
-    <!-- Skills Section -->
     <section id="skills" class="section skills">
         <div class="container">
             <h2 class="section-title">Core Competencies</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">🏆</div>
+                    <div class="skill-icon"></div>
                     <h3 class="skill-title">Leadership & Operations</h3>
                     <ul class="skill-list">
                         <li>Operational Leadership & Team Management</li>
@@ -840,7 +860,7 @@
                 </div>
                 
                 <div class="skill-card">
-                    <div class="skill-icon">💰</div>
+                    <div class="skill-icon"></div>
                     <h3 class="skill-title">Business & Financial</h3>
                     <ul class="skill-list">
                         <li>Budget Management & Financial Planning</li>
@@ -852,7 +872,7 @@
                 </div>
                 
                 <div class="skill-card">
-                    <div class="skill-icon">🎯</div>
+                    <div class="skill-icon"></div>
                     <h3 class="skill-title">Specialized Expertise</h3>
                     <ul class="skill-list">
                         <li>F&B Operations & Transformation</li>
@@ -866,7 +886,6 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
@@ -874,22 +893,22 @@
                 <p>Ready to transform your F&B business or discuss trading strategies? Let's start a conversation.</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon"></div>
                         <h4>Email</h4>
                         <p>neawla@hotmail.com</p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📱</div>
+                        <div class="contact-icon"></div>
                         <h4>Phone</h4>
                         <p>+66 61 410 7730</p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon"></div>
                         <h4>Location</h4>
                         <p>Bangkok, Thailand</p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
+                        <div class="contact-icon"></div>
                         <h4>Website</h4>
                         <p><a href="https://rnbtransolution.github.io/consultant/" target="_blank" style="color: #d4af37; text-decoration: none;">rnbtransolution.github.io</a></p>
                     </div>
@@ -898,7 +917,6 @@
         </div>
     </section>
     
-    <!-- Scroll to Top Button -->
     <button class="scroll-top" onclick="scrollToTop()">↑</button>
     
     <script>
