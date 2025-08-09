@@ -546,7 +546,7 @@
         .contact-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: white;
+            color: white; /* Ensures monochrome color */
         }
         
         /* Mobile Responsiveness */
@@ -671,33 +671,34 @@
 
         /* Override specific icons with monochrome symbols for skills */
         .skill-card:nth-child(1) .skill-icon::before {
-            content: '💼'; 
+            content: '◉'; /* Black Circle for Leadership & Operations (symbolizing core, foundational) */
         }
         .skill-card:nth-child(2) .skill-icon::before {
-            content: '📈'; 
+            content: '📈'; /* Upwards Trend Line for Business & Financial (already a good flat representation) */
         }
         .skill-card:nth-child(3) .skill-icon::before {
-            content: '⚙️'; 
+            content: '⛭'; /* Crossed Tools / Settings for Specialized Expertise (simple, mechanical feel) */
         }
 
         /* Override specific icons with modern monochrome symbols for contact */
         .contact-item:nth-child(1) .contact-icon::before {
-            content: '✉️';
+            content: '✉'; /* Black Envelope for Email (clean and universally recognized) */
         }
         .contact-item:nth-child(2) .contact-icon::before {
-            content: '📞';
+            content: '℡'; /* Telephone Sign for Phone (a classic, flat telephone symbol) */
         }
         .contact-item:nth-child(3) .contact-icon::before {
-            content: '📍';
+            content: '⌖'; /* Target/Sight for Location (a modern, geometric indicator) */
         }
         .contact-item:nth-child(4) .contact-icon::before {
-            content: '🔗';
+            content: '⌘'; /* Command Key for Website/Link (abstract, but often associated with digital command/connectivity) */
         }
     </style>
 </head>
 <body>
     <div class="animated-bg"></div>
     
+    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <div class="logo">Itthirat Naewla</div>
@@ -711,6 +712,7 @@
         </div>
     </nav>
     
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="particles">
             <div class="particle" style="left: 20%; animation-delay: 0s;"></div>
@@ -731,6 +733,7 @@
         </div>
     </section>
     
+    <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -766,6 +769,7 @@
         </div>
     </section>
     
+    <!-- Experience Section -->
     <section id="experience" class="section experience">
         <div class="container">
             <h2 class="section-title">Professional Journey</h2>
@@ -843,6 +847,7 @@
         </div>
     </section>
     
+    <!-- Skills Section -->
     <section id="skills" class="section skills">
         <div class="container">
             <h2 class="section-title">Core Competencies</h2>
@@ -886,6 +891,7 @@
         </div>
     </section>
     
+    <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
@@ -917,6 +923,7 @@
         </div>
     </section>
     
+    <!-- Scroll to Top Button -->
     <button class="scroll-top" onclick="scrollToTop()">↑</button>
     
     <script>
@@ -1049,7 +1056,7 @@
         function animateCounters() {
             document.querySelectorAll('.stat-number').forEach(counter => {
                 const target = parseInt(counter.innerText.replace(/\D/g, ''));
-                const suffix = counter.innerText.replace(/\d/g, '');
+                const suffix = counter.innerText.replace(/\d/g, ''); // Fixed: Removed duplicate .innerText
                 let current = 0;
                 const increment = target / 100;
                 
