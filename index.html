@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itthirat Naewla - Portfolio</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Itthirat Naewla - Portfolio</title>
+<style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
         
         * {
@@ -435,7 +436,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: white;
+            color: #2d5016;
         }
         
         /* Skills Section */
@@ -500,7 +501,7 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: white;
+            color: #d4af37;
         }
         
         /* Contact Section */
@@ -546,7 +547,7 @@
         .contact-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: white;
+            color: #d4af37;
         }
         
         /* Mobile Responsiveness */
@@ -668,258 +669,226 @@
             background: rgba(212, 175, 55, 1);
             transform: translateY(-3px);
         }
-
-        /* Override specific icons with monochrome symbols for skills */
-        .skill-card:nth-child(1) .skill-icon::before {
-            content: '💼'; 
-        }
-        .skill-card:nth-child(2) .skill-icon::before {
-            content: '📈'; 
-        }
-        .skill-card:nth-child(3) .skill-icon::before {
-            content: '⚙️'; 
-        }
-
-        /* Override specific icons with modern monochrome symbols for contact */
-        .contact-item:nth-child(1) .contact-icon::before {
-            content: '✉️';
-        }
-        .contact-item:nth-child(2) .contact-icon::before {
-            content: '📞';
-        }
-        .contact-item:nth-child(3) .contact-icon::before {
-            content: '📍';
-        }
-        .contact-item:nth-child(4) .contact-icon::before {
-            content: '🔗';
-        }
     </style>
 </head>
 <body>
-    <div class="animated-bg"></div>
-    
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="logo">Itthirat Naewla</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <section id="home" class="hero">
-        <div class="particles">
-            <div class="particle" style="left: 20%; animation-delay: 0s;"></div>
-            <div class="particle" style="left: 40%; animation-delay: 2s;"></div>
-            <div class="particle" style="left: 60%; animation-delay: 4s;"></div>
-            <div class="particle" style="left: 80%; animation-delay: 1s;"></div>
-            <div class="particle" style="left: 30%; top: 60%; animation-delay: 3s;"></div>
-            <div class="particle" style="left: 70%; top: 40%; animation-delay: 5s;"></div>
-        </div>
-        <div class="hero-content">
-            <h1>ITTHIRAT NAEWLA</h1>
-            <p class="subtitle">Gold Trader & Founder of R&B Transolution</p>
-            <p class="description">24+ years of hospitality excellence combined with financial market expertise, transforming F&B businesses through strategic consulting and operational excellence.</p>
-            <div class="cta-buttons">
-                <a href="#about" class="btn btn-primary">Discover My Journey</a>
-                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
-            </div>
-        </div>
-    </section>
-    
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="your-profile-photo.jpg" alt="Itthirat Naewla - Professional Photo" />
-                </div>
-                <div class="about-text-wrapper">
-                    <div class="about-text">
-                        <p>Accomplished hospitality leader with extensive experience driving operational excellence and delivering exceptional guest experiences across luxury and boutique properties. Currently leveraging financial market expertise as an independent gold trader while founding R&B Transolution to transform F&B businesses through strategic consulting and operational excellence.</p>
-                        <p>Known for strong leadership, strategic planning, and the ability to oversee diverse functions including Food & Beverage, Housekeeping, Sport & Recreation, and Event Management. Passionate about operational excellence and continuous learning.</p>
-                    </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number">24+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">250+</div>
-                            <div class="stat-label">Team Members Led</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">175M</div>
-                            <div class="stat-label">THB Revenue Managed</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">87%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="experience" class="section experience">
-        <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Gold Trader & Founder of R&B Transolution</h3>
-                        <p class="company">Independent Trading & Business Consulting</p>
-                        <p class="duration">January 2025 - Present</p>
-                        <ul class="achievements">
-                            <li>Founded R&B Transolution for F&B business transformation</li>
-                            <li>Developed robust gold trading strategies with advanced technical indicators</li>
-                            <li>Applied hospitality expertise to create innovative consulting solutions</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Director of Operations</h3>
-                        <p class="company">InterContinental Koh Samui Resort</p>
-                        <p class="duration">January 2022 - January 2025</p>
-                        <ul class="achievements">
-                            <li>Led 250+ staff with 15% guest satisfaction increase</li>
-                            <li>Acted as General Manager for 6 months</li>
-                            <li>Revitalized F&B post-COVID with 18% revenue boost</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Co-Founder</h3>
-                        <p class="company">Nokhook Production Co., Ltd.</p>
-                        <p class="duration">September 2019 - July 2021</p>
-                        <ul class="achievements">
-                            <li>Executed 5+ high-profile events with 87% client satisfaction</li>
-                            <li>Boosted event profitability by 45%</li>
-                            <li>Increased social media engagement by 38%</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Director of Food & Beverage</h3>
-                        <p class="company">Siam@Siam Design Hotel Bangkok</p>
-                        <p class="duration">November 2018 - August 2019</p>
-                        <ul class="achievements">
-                            <li>Led TAAN restaurant to Michelin star recognition</li>
-                            <li>Transformed rooftop concept with 22% revenue growth</li>
-                            <li>Achieved 17% increase in positive guest reviews</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Multiple Leadership Roles</h3>
-                        <p class="company">Holiday Inn, AVANI+, Crowne Plaza, Banyan Tree</p>
-                        <p class="duration">November 2004 - October 2018</p>
-                        <ul class="achievements">
-                            <li>Managed outlets with 175M THB annual revenue</li>
-                            <li>Led pre-opening projects exceeding projections by 15%</li>
-                            <li>Achieved 86% occupancy within first 3 months</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="skills" class="section skills">
-        <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"></div>
-                    <h3 class="skill-title">Leadership & Operations</h3>
-                    <ul class="skill-list">
-                        <li>Operational Leadership & Team Management</li>
-                        <li>Strategic Planning & Implementation</li>
-                        <li>Pre-Opening Operations Expertise</li>
-                        <li>Guest Experience Enhancement</li>
-                        <li>Cross-functional Team Leadership</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon"></div>
-                    <h3 class="skill-title">Business & Financial</h3>
-                    <ul class="skill-list">
-                        <li>Budget Management & Financial Planning</li>
-                        <li>Financial Markets & Trading</li>
-                        <li>Business Consulting & SOP Development</li>
-                        <li>Stakeholder Management</li>
-                        <li>Revenue Optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon"></div>
-                    <h3 class="skill-title">Specialized Expertise</h3>
-                    <ul class="skill-list">
-                        <li>F&B Operations & Transformation</li>
-                        <li>Event Planning & Execution</li>
-                        <li>Marketing Strategy for Hospitality</li>
-                        <li>Brand Standards Implementation</li>
-                        <li>Technical Analysis & Risk Management</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-content">
-                <p>Ready to talk about transforming your restaurant and bar business or diving into some trading strategies? Let's chat!</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon"></div>
-                        <h4>Email</h4>
-                        <p>neawla@hotmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"></div>
-                        <h4>Phone</h4>
-                        <p>+66 89 104 1992</p>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"></div>
-                        <h4>Location</h4>
-                        <p>Bangkok, Thailand</p>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"></div>
-                        <h4>Website</h4>
-                        <p><a href="https://rnbtransolution.github.io/consultant/" target="_blank" style="color: #d4af37; text-decoration: none;">rnbtransolution.github.io</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <button class="scroll-top" onclick="scrollToTop()">↑</button>
-    
-    <script>
+<div class="animated-bg"></div>
+<!-- Navigation -->
+<nav class="nav">
+<div class="nav-container">
+<div class="logo"><img alt="NT Logo" src="logo.png" style="height:50px; width:auto;"/></div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="particles">
+<div class="particle" style="left: 20%; animation-delay: 0s;"></div>
+<div class="particle" style="left: 40%; animation-delay: 2s;"></div>
+<div class="particle" style="left: 60%; animation-delay: 4s;"></div>
+<div class="particle" style="left: 80%; animation-delay: 1s;"></div>
+<div class="particle" style="left: 30%; top: 60%; animation-delay: 3s;"></div>
+<div class="particle" style="left: 70%; top: 40%; animation-delay: 5s;"></div>
+</div>
+<div class="hero-content">
+<h1>ITTHIRAT NAEWLA</h1>
+<p class="subtitle">Gold Trader &amp; Founder of R&amp;B Transolution</p>
+<p class="description">24+ years of hospitality excellence combined with financial market expertise, transforming F&amp;B businesses through strategic consulting and operational excellence.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="#about">Discover My Journey</a>
+<a class="btn btn-secondary" href="#contact">Let's Connect</a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="section about" id="about">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<div class="about-content">
+<div class="about-image">
+<img alt="Itthirat Naewla - Professional Photo" src="your-profile-photo.jpg"/>
+</div>
+<div class="about-text-wrapper">
+<div class="about-text">
+<p>Accomplished hospitality leader with extensive experience driving operational excellence and delivering exceptional guest experiences across luxury and boutique properties. Currently leveraging financial market expertise as an independent gold trader while founding R&amp;B Transolution to transform F&amp;B businesses through strategic consulting and operational excellence.</p>
+<p>Known for strong leadership, strategic planning, and the ability to oversee diverse functions including Food &amp; Beverage, Housekeeping, Sport &amp; Recreation, and Event Management. Passionate about operational excellence and continuous learning.</p>
+</div>
+<div class="stats">
+<div class="stat">
+<div class="stat-number">24+</div>
+<div class="stat-label">Years Experience</div>
+</div>
+<div class="stat">
+<div class="stat-number">250+</div>
+<div class="stat-label">Team Members Led</div>
+</div>
+<div class="stat">
+<div class="stat-number">175M</div>
+<div class="stat-label">THB Revenue Managed</div>
+</div>
+<div class="stat">
+<div class="stat-number">87%</div>
+<div class="stat-label">Client Satisfaction</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="section experience" id="experience">
+<div class="container">
+<h2 class="section-title">Professional Journey</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3 class="job-title">Gold Trader &amp; Founder of R&amp;B Transolution</h3>
+<p class="company">Independent Trading &amp; Business Consulting</p>
+<p class="duration">January 2025 - Present</p>
+<ul class="achievements">
+<li>Founded R&amp;B Transolution for F&amp;B business transformation</li>
+<li>Developed robust gold trading strategies with advanced technical indicators</li>
+<li>Applied hospitality expertise to create innovative consulting solutions</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3 class="job-title">Director of Operations</h3>
+<p class="company">InterContinental Koh Samui Resort</p>
+<p class="duration">January 2022 - January 2025</p>
+<ul class="achievements">
+<li>Led 250+ staff with 15% guest satisfaction increase</li>
+<li>Acted as General Manager for 6 months</li>
+<li>Revitalized F&amp;B post-COVID with 18% revenue boost</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3 class="job-title">Co-Founder</h3>
+<p class="company">Nokhook Production Co., Ltd.</p>
+<p class="duration">September 2019 - July 2021</p>
+<ul class="achievements">
+<li>Executed 5+ high-profile events with 87% client satisfaction</li>
+<li>Boosted event profitability by 45%</li>
+<li>Increased social media engagement by 38%</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3 class="job-title">Director of Food &amp; Beverage</h3>
+<p class="company">Siam@Siam Design Hotel Bangkok</p>
+<p class="duration">November 2018 - August 2019</p>
+<ul class="achievements">
+<li>Led TAAN restaurant to Michelin star recognition</li>
+<li>Transformed rooftop concept with 22% revenue growth</li>
+<li>Achieved 17% increase in positive guest reviews</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3 class="job-title">Multiple Leadership Roles</h3>
+<p class="company">Holiday Inn, AVANI+, Crowne Plaza, Banyan Tree</p>
+<p class="duration">November 2004 - October 2018</p>
+<ul class="achievements">
+<li>Managed outlets with 175M THB annual revenue</li>
+<li>Led pre-opening projects exceeding projections by 15%</li>
+<li>Achieved 86% occupancy within first 3 months</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="section skills" id="skills">
+<div class="container">
+<h2 class="section-title">Core Competencies</h2>
+<div class="skills-grid">
+<div class="skill-card">
+<div class="skill-icon">🏆</div>
+<h3 class="skill-title">Leadership &amp; Operations</h3>
+<ul class="skill-list">
+<li>Operational Leadership &amp; Team Management</li>
+<li>Strategic Planning &amp; Implementation</li>
+<li>Pre-Opening Operations Expertise</li>
+<li>Guest Experience Enhancement</li>
+<li>Cross-functional Team Leadership</li>
+</ul>
+</div>
+<div class="skill-card">
+<div class="skill-icon">💰</div>
+<h3 class="skill-title">Business &amp; Financial</h3>
+<ul class="skill-list">
+<li>Budget Management &amp; Financial Planning</li>
+<li>Financial Markets &amp; Trading</li>
+<li>Business Consulting &amp; SOP Development</li>
+<li>Stakeholder Management</li>
+<li>Revenue Optimization</li>
+</ul>
+</div>
+<div class="skill-card">
+<div class="skill-icon">🎯</div>
+<h3 class="skill-title">Specialized Expertise</h3>
+<ul class="skill-list">
+<li>F&amp;B Operations &amp; Transformation</li>
+<li>Event Planning &amp; Execution</li>
+<li>Marketing Strategy for Hospitality</li>
+<li>Brand Standards Implementation</li>
+<li>Technical Analysis &amp; Risk Management</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+<div class="container">
+<h2 class="section-title">Let's Connect</h2>
+<div class="contact-content">
+<p>Ready to transform your F&amp;B business or discuss trading strategies? Let's start a conversation.</p>
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-icon">📧</div>
+<h4>Email</h4>
+<p>neawla@hotmail.com</p>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📱</div>
+<h4>Phone</h4>
+<p>+66 89 104 1992</p>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<h4>Location</h4>
+<p>Bangkok, Thailand</p>
+</div>
+<div class="contact-item">
+<div class="contact-icon">🌐</div>
+<h4>Website</h4>
+<p><a href="https://rnbtransolution.github.io/consultant/" style="color: #d4af37; text-decoration: none;" target="_blank">rnbtransolution.github.io</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scroll to Top Button -->
+<button class="scroll-top" onclick="scrollToTop()">↑</button>
+<script>
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
