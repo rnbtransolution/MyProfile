@@ -59,13 +59,14 @@
         }
         
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 100%;
+}
         
         .logo {
             font-size: 1.5rem;
@@ -74,10 +75,11 @@
         }
         
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
         
         .nav-links a {
             text-decoration: none;
@@ -669,8 +671,13 @@
             background: rgba(212, 175, 55, 1);
             transform: translateY(-3px);
         }
-    </style>
-</head>
+    
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}</style>
+<link href="favicon.png" rel="icon" type="image/png"/></head>
 <body>
 <div class="animated-bg"></div>
 <!-- Navigation -->
