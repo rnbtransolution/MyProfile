@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -21,7 +23,17 @@
             print-color-adjust: exact;
         }
 
-        /* Page Container Setup */
+        .fi-spin-pulse {
+            display: inline-block;
+            animation: fi-spin-pulse-logic 2.5s infinite linear;
+        }
+
+        @keyframes fi-spin-pulse-logic {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.15); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
         .page {
             width: 210mm;
             height: 297mm; 
@@ -35,7 +47,6 @@
             flex-direction: column;
         }
 
-        /* --- Header --- */
         header {
             border-bottom: 2px solid #f1f3f4;
             padding-bottom: 15px;
@@ -96,7 +107,6 @@
             text-align: center;
         }
         
-        /* เพิ่มลูกเล่นให้ไอคอนติดต่อเล็กน้อยเมื่อเอาเมาส์ไปชี้ */
         .contact-info i:hover {
             color: #4285F4;
             transform: scale(1.2);
@@ -115,7 +125,6 @@
             right: 20mm;
         }
 
-        /* --- Section Headers --- */
         h2.section-header {
             font-size: 11pt;
             font-weight: 700;
@@ -130,17 +139,14 @@
 
         h2.section-header i { 
             font-size: 12pt; 
-            /* ปรับแต่ง Animation ให้ดูสมูทขึ้น */
-            --fa-animation-duration: 2s; /* ช้าลงหน่อยจะได้ไม่ลายตา */
+            --fa-animation-duration: 2s; 
         }
 
-        /* Themes */
         .sec-blue { background-color: #e8f0fe; color: #1967d2; border-left: 5px solid #1967d2; } 
         .sec-purple { background-color: #f3e8fd; color: #8430ce; border-left: 5px solid #8430ce; } 
         .sec-green { background-color: #e6f4ea; color: #1e8e3e; border-left: 5px solid #1e8e3e; } 
         .sec-yellow { background-color: #fef7e0; color: #f29900; border-left: 5px solid #f29900; }
 
-        /* --- Content Cards --- */
         .cv-grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -162,7 +168,6 @@
             transition: transform 0.2s;
         }
         
-        /* เพิ่มลูกเล่นให้ Card ลอยขึ้นนิดนึงเมื่อเอาเมาส์ชี้ */
         .sop-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -205,7 +210,6 @@
             text-align: justify;
         }
 
-        /* --- Footer --- */
         footer {
             margin-top: auto;
             text-align: center;
@@ -215,7 +219,6 @@
             border-top: 1px solid #f1f3f4;
         }
 
-        /* --- Print Settings --- */
         @media print {
             body { background: none; margin: 0; padding: 0; }
             .page { 
@@ -227,13 +230,10 @@
                 border: none;
             }
             .page:last-child { page-break-after: auto; }
-            
-            /* Print Colors & Reset Animation for Print */
             h2.section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .sop-card { border: 1px solid #ccc; box-shadow: none !important; transform: none !important; }
             
-            /* Stop animations on paper (Print Friendly) */
-            .fa-beat-fade, .fa-spin, .fa-bounce, .fa-spin-pulse, .fa-flip {
+            .fa-beat-fade, .fa-spin, .fa-bounce, .fa-spin-pulse, .fa-flip, .fi-spin-pulse {
                 animation: none !important;
             }
         }
@@ -243,7 +243,6 @@
 
     <div class="page">
         <img src="your-profile-photo.png" alt="Profile" class="profile-photo">
-        
         <header>
             <div class="header-left">
                 <h1>Itthirat Naewla</h1>
@@ -332,10 +331,7 @@
                 </div>
             </div>
         </div>
-
-        <footer>
-            CV - Itthirat Naewla | Confidential Document
-        </footer>
+        <footer>CV - Itthirat Naewla | Confidential Document</footer>
     </div>
 
     <div class="page">
@@ -347,7 +343,6 @@
                 <div class="dept-tag">Page 2 / 3</div>
             </div>
         </header>
-
         <div class="cv-stack">
             <div class="sop-card">
                 <div class="card-label">Sep 2019 - July 2021</div>
@@ -356,13 +351,9 @@
                 <div class="card-content">
                     <ul>
                         <li>Organized over 5 high-profile events with 87% client satisfaction.</li>
-                        <li>Led a team of 20 event professionals ensuring seamless coordination.</li>
-                        <li>Boosted event profitability by 45% through innovative planning.</li>
-                        <li>Increased social media engagement by 38% through targeted marketing.</li>
                     </ul>
                 </div>
             </div>
-
             <div class="sop-card">
                 <div class="card-label">Nov 2018 - Aug 2019</div>
                 <div class="card-title">Director of Food & Beverage</div>
@@ -370,12 +361,9 @@
                 <div class="card-content">
                     <ul>
                         <li>Launched TAAN, an authentic Thai restaurant, achieving Michelin star award.</li>
-                        <li>Transformed rooftop restaurant concept, resulting in 22% revenue growth.</li>
-                        <li>Elevated team performance, achieving a 17% increase in positive guest reviews.</li>
                     </ul>
                 </div>
             </div>
-
             <div class="sop-card">
                 <div class="card-label">May 2017 - Oct 2018</div>
                 <div class="card-title">Director of Food & Beverage (Pre-Opening)</div>
@@ -383,11 +371,9 @@
                 <div class="card-content">
                     <ul>
                         <li>Led pre-opening project, generating 15% above projected revenue in Q1.</li>
-                        <li>Managed a team of 80 staff ensuring alignment with IHG® brand standards.</li>
                     </ul>
                 </div>
             </div>
-
             <div class="sop-card">
                 <div class="card-label">Aug 2016 - May 2017</div>
                 <div class="card-title">Assistant Director of Food & Beverage</div>
@@ -395,15 +381,11 @@
                 <div class="card-content">
                     <ul>
                         <li>Oversaw restaurant/bar/banquet, increasing event profit by 8%.</li>
-                        <li>Enhanced guest satisfaction scores by 16% through innovative service training.</li>
                     </ul>
                 </div>
             </div>
         </div>
-
-        <footer>
-            CV - Itthirat Naewla | Confidential Document
-        </footer>
+        <footer>CV - Itthirat Naewla | Confidential Document</footer>
     </div>
 
     <div class="page">
@@ -417,9 +399,10 @@
         </header>
 
         <h2 class="section-header sec-green" style="margin-top: 0;">
-            <i class="fa-solid fa-clock-rotate-left fa-spin-pulse" style="--fa-animation-duration: 2.5s;"></i>
+            <i class="fa-solid fa-clock-rotate-left fa-spin" style="--fa-animation-duration: 2s; --fa-animation-direction: reverse;"></i>
             Previous Experience
         </h2>
+        
         <div class="cv-stack">
             <div class="sop-card">
                 <div class="card-label">Feb 2011 - Aug 2016</div>
@@ -433,7 +416,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="sop-card">
                 <div class="card-label">Nov 2005 - Feb 2011</div>
                 <div class="card-title">Cluster Restaurant Manager</div>
@@ -467,10 +449,7 @@
         <div style="margin-top: 30px; text-align: center; color: #9aa0a6; font-size: 9pt;">
             <p>References available upon request.</p>
         </div>
-
-        <footer>
-            All rights reserved. Redistribution or forwarding without prior consent is prohibited.
-        </footer>
+        <footer>All rights reserved. Redistribution or forwarding without prior consent is prohibited.</footer>
     </div>
 
 </body>
