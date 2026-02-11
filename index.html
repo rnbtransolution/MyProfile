@@ -1,404 +1,265 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Itthirat Naewla 2026</title>
+    <title>Itthirat Naewla - Hospitality Operations & Strategy</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            /* Corporate Palette Definition */
-            --primary-navy: #0f2a4a;   /* Deep Midnight Blue - Main Headers */
-            --secondary-blue: #2c4a6e; /* Lighter Navy - Subheaders */
-            --accent-gold: #c5a065;    /* Muted Gold - Small highlights */
-            --text-dark: #2d2d2d;      /* Main Body Text */
-            --text-grey: #5f6368;      /* Meta info */
-            --bg-light: #f8f9fa;       /* Section Backgrounds */
-            --border-color: #e0e0e0;
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body {
-            font-family: 'Google Sans', sans-serif;
-            line-height: 1.45;
-            color: var(--text-dark);
-            background: #ffffff !important;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corporate: {
+                            navy: '#1a3c5e',    // Primary Blue from CV
+                            slate: '#4a5568',   // Secondary Grey
+                            green: '#235c46',   // Accent Green
+                            gold: '#8c6d1f',    // Accent Gold
+                            bg: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
         }
-
-        .page {
-            width: 210mm;
-            height: 297mm; 
-            background: #ffffff !important;
-            margin: 0 auto;
-            padding: 15mm 12mm; 
-            position: relative;
-            overflow: hidden; 
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            border-bottom: 2px solid var(--primary-navy); /* Stronger brand line */
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .header-left h1 {
-            font-size: 22pt;
-            color: var(--primary-navy);
-            font-weight: 700;
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-        }
-
-        .header-left p {
-            font-size: 11pt;
-            color: var(--secondary-blue);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .header-right { text-align: right; margin-right: 100px; }
-
-        .dept-tag {
-            background: var(--primary-navy);
-            padding: 5px 12px;
-            border-radius: 2px;
-            font-size: 8pt;
-            font-weight: 600;
-            color: #ffffff;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-info {
-            font-size: 9pt;
-            color: var(--text-grey);
-            margin-top: 8px;
-            line-height: 1.6;
-        }
-
-        .contact-info i { margin-left: 6px; color: var(--accent-gold); font-size: 10pt; width: 15px; text-align: center; }
-
-        .profile-photo {
-            width: 95px;
-            height: 110px;
-            object-fit: cover;
-            border-radius: 2px;
-            border: 1px solid var(--border-color);
-            position: absolute;
-            top: 15mm;
-            right: 12mm;
-            background: #ffffff;
-        }
-
-        h2.section-header {
-            font-size: 11pt;
-            font-weight: 700;
-            padding: 8px 12px;
-            margin: 15px 0 10px 0;
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            /* Unified Header Style */
-            background-color: var(--bg-light);
-            color: var(--primary-navy);
-            border-left: 4px solid var(--primary-navy);
-            border-bottom: 1px solid #eee;
-        }
-
-        /* Override old color classes to use unified style */
-        .sec-blue, .sec-purple, .sec-green, .sec-yellow {
-            background-color: var(--bg-light);
-            color: var(--primary-navy);
-            border-left: 4px solid var(--primary-navy);
-        }
-
-        .cv-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .cv-stack { display: flex; flex-direction: column; gap: 10px; }
-
-        .sop-card {
-            border-left: 1px solid var(--border-color); /* Minimalist border */
-            padding: 5px 15px; 
-            background: #ffffff;
-            page-break-inside: avoid;
-            margin-bottom: 5px;
-        }
-
-        .card-label { 
-            font-size: 7.5pt; 
-            font-weight: 700; 
-            color: var(--text-grey); 
-            margin-bottom: 4px; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px;
-        }
-        
-        .card-title { 
-            font-size: 10.5pt; 
-            font-weight: 700; 
-            color: var(--primary-navy); 
-            margin-bottom: 2px; 
-        }
-        
-        .card-subtitle { 
-            font-size: 9pt; 
-            font-weight: 600; 
-            color: var(--accent-gold); /* Gold accent for positions/companies */
-            margin-bottom: 6px; 
-        }
-        
-        .card-content { font-size: 9pt; color: #444; line-height: 1.5; text-align: justify; }
-        .card-content ul { padding-left: 18px; margin: 0; }
-        .card-content li { margin-bottom: 3px; }
-        
-        strong { color: var(--primary-navy); font-weight: 600; }
-
-        footer {
-            margin-top: auto;
-            text-align: center;
-            font-size: 8pt;
-            color: #b0b0b0;
-            padding-top: 10px;
-            border-top: 1px solid #f1f3f4;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        @media print {
-            @page { margin: 0; size: A4; }
-            body { background: #white !important; }
-            .page { margin: 0 !important; box-shadow: none !important; page-break-after: always; width: 210mm; height: 297mm; }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-corporate-bg text-gray-700 font-body antialiased">
 
-    <div class="page">
-        <img src="your-profile-photo.png" alt="Profile" class="profile-photo">
-        <header>
-            <div class="header-left">
-                <h1>ITTHIRAT NAEWLA</h1>
-                <p>Hospitality Operations & Strategy</p>
-            </div>
-            <div class="header-right">
-                <div class="dept-tag">Page 1 / 3</div>
-                <div class="contact-info">
-                    27 Feb 1983 <i class="fa-solid fa-calendar-days"></i><br>
-                    Bangkok, Thailand <i class="fa-solid fa-location-dot"></i><br>
-                    +66 61 410 7730 <i class="fa-solid fa-phone"></i><br>
-                    neawla@hotmail.com <i class="fa-solid fa-envelope"></i>
+    <nav class="bg-white shadow-sm fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-corporate-navy font-heading tracking-tight">
+                        ITTHIRAT<span class="text-corporate-gold">.</span>
+                    </span>
                 </div>
-            </div>
-        </header>
-
-        <h2 class="section-header"><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
-        <div class="sop-card">
-            <div class="card-content">
-                Accomplished hospitality leader with extensive experience driving operational excellence across luxury properties. Expert in overseeing F&B, Housekeeping, Sport & Recreation, and Event Management. Adept at strategic planning, financial market analysis, and performance consultancy. Proven track record in <strong>profit maximization, rebranding, and international task-force operations</strong>.
-            </div>
-        </div>
-
-        <h2 class="section-header"><i class="fa-solid fa-sliders"></i> Key Competencies</h2>
-        <div class="cv-grid-2">
-            <div class="sop-card">
-                <div class="card-title">Core Skills</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Operational Leadership & Efficiency</li>
-                        <li>Strategic Planning & Rebranding</li> 
-                        <li>Pre-Opening & Grand Opening Projects</li>
-                        <li>International Task Force Experience</li> 
-                    </ul>
-                </div>
-            </div>
-            <div class="sop-card">
-                <div class="card-title">Technical Skills</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Budgeting, CAPEX & ROI Analysis</li> 
-                        <li>Menu Engineering & Cost Control</li> 
-                        <li>Food Safety Management (FSMS)</li> 
-                        <li>TradingView & Market Indicators</li>
-                    </ul>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-corporate-navy transition">About</a>
+                    <a href="#competencies" class="text-sm font-medium text-gray-600 hover:text-corporate-navy transition">Competencies</a>
+                    <a href="#experience" class="text-sm font-medium text-gray-600 hover:text-corporate-navy transition">Experience</a>
+                    <a href="#contact" class="px-5 py-2 rounded-full bg-corporate-navy text-white text-sm font-medium hover:bg-blue-900 transition shadow-lg shadow-blue-900/20">Contact</a>
                 </div>
             </div>
         </div>
+    </nav>
 
-        <h2 class="section-header"><i class="fa-solid fa-briefcase"></i> Recent Experience</h2>
-        <div class="cv-stack">
-            <div class="sop-card">
-                <div class="card-label">Jan 2025 - Present</div>
-                <div class="card-title">Managing Director</div>
-                <div class="card-subtitle">R&B TRANSOLUTION</div>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>Strategic Business Transformation:</strong> delivering "Transolution" services to elevate hospitality businesses via <strong>Re-branding</strong>, structural restructuring, and concept redevelopment.</li>
-                        <li><strong>Data-Driven Performance:</strong> utilizing <strong>Menu Engineering</strong> and <strong>SWOT Analysis</strong> to maximize profitability and identify competitive advantages.</li>
-                        <li><strong>Operational Standardization:</strong> designing bespoke <strong>SOPs</strong> and conducting <strong>Q.A. Audits</strong> to ensure global service standards.</li>
-                        <li><strong>Talent Development:</strong> leading specialized <strong>Service Workshops</strong> to elevate staff competency and service mindset.</li>
-                    </ul>
+    <header id="about" class="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest text-corporate-navy uppercase bg-blue-50 rounded-md">
+                        Managing Director & Consultant
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold text-corporate-navy mb-6 font-heading leading-tight">
+                        Hospitality Operations <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-corporate-navy to-corporate-green">& Strategy Expert</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">
+                        Accomplished hospitality leader driving operational excellence. Expert in profit maximization, rebranding, and international task-force operations across luxury properties.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-8">
+                        <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2 text-corporate-gold"></i> Bangkok, Thailand</span>
+                        <span class="flex items-center"><i class="fa-solid fa-envelope mr-2 text-corporate-gold"></i> neawla@hotmail.com</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#experience" class="px-8 py-3 rounded-md bg-corporate-navy text-white font-semibold shadow-xl shadow-blue-900/10 hover:-translate-y-1 transition duration-300">
+                            View Experience
+                        </a>
+                        <a href="#contact" class="px-8 py-3 rounded-md border border-gray-300 text-corporate-navy font-semibold hover:bg-gray-50 transition duration-300">
+                            Get in Touch
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="sop-card">
-                <div class="card-label">Jan 2022 - Jan 2025</div>
-                <div class="card-title">Director of Operations</div>
-                <div class="card-subtitle">INTERCONTINENTAL KOH SAMUI RESORT</div>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>Acting General Manager</strong> for 6 months, driving total resort performance and strategy.</li>
-                        <li>Directly oversaw 8 key operational departments: <strong>Front Office, Housekeeping, Engineering, F&B, Security, IT, Spa, and Recreation</strong>.</li>
-                        <li>Managed dotted-line functions for <strong>Learning & Development</strong> and <strong>Event Management</strong>.</li>
-                        <li>Increased guest satisfaction scores by 15% and F&B revenue by 18% during post-COVID recovery.</li>
-                        <li>Achieved 13% growth in employee engagement through targeted culture building.</li>
-                    </ul>
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="relative w-72 h-80 lg:w-96 lg:h-[30rem]">
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-corporate-navy to-corporate-green opacity-10 rounded-2xl transform rotate-3"></div>
+                        <img src="https://placehold.co/400x500/e2e8f0/1a3c5e?text=Profile+Photo" alt="Itthirat Naewla" class="relative w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white">
+                    </div>
                 </div>
             </div>
         </div>
-        <footer>CV - Itthirat Naewla | Confidential Document</footer>
-    </div>
+    </header>
 
-    <div class="page">
-        <header style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
-            <div class="header-left"><h1 style="font-size: 16pt;">Experience (Continued)</h1></div>
-            <div class="header-right" style="margin-right: 0;"><div class="dept-tag">Page 2 / 3</div></div>
-        </header>
-        <div class="cv-stack">
-            <div class="sop-card">
-                <div class="card-label">Sep 2019 - July 2021</div>
-                <div class="card-title">Co-Founder</div>
-                <div class="card-subtitle">NOKHOOK PRODUCTION CO., LTD.</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Managed large-scale events (e.g., 3,000 clients for blockchain startup) and international client queries.</li> 
-                        <li>Boosted event profitability by 45% through resource optimization.</li>
-                        <li>Executed high-profile weddings and conferences with 87% client satisfaction.</li>
-                        <li>Drove MICE business from SEA region and developed company profile for global markets.</li> 
-                    </ul>
+    <section id="competencies" class="py-24 bg-corporate-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-corporate-navy font-heading mb-4">Key Competencies</h2>
+                <div class="h-1 w-20 bg-corporate-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-corporate-navy">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-6 text-corporate-navy">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3 font-heading">Strategic Planning</h3>
+                    <p class="text-sm text-gray-600">Rebranding, structural restructuring, and concept redevelopment for sustainability.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-corporate-slate">
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-6 text-corporate-slate">
+                        <i class="fa-solid fa-list-check text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3 font-heading">Operations & SOPs</h3>
+                    <p class="text-sm text-gray-600">Designing Standard Operating Procedures and conducting rigorous Q.A. Audits.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-corporate-green">
+                    <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mb-6 text-corporate-green">
+                        <i class="fa-solid fa-money-bill-trend-up text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3 font-heading">Financial Analysis</h3>
+                    <p class="text-sm text-gray-600">Budgeting, CAPEX, ROI Analysis, and Cost Control via Menu Engineering.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-corporate-gold">
+                    <div class="w-10 h-10 bg-yellow-50 rounded-lg flex items-center justify-center mb-6 text-corporate-gold">
+                        <i class="fa-solid fa-users-gear text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3 font-heading">Talent Development</h3>
+                    <p class="text-sm text-gray-600">Leading service workshops to elevate staff competency and service mindset.</p>
                 </div>
             </div>
-            <div class="sop-card">
-                <div class="card-label">Nov 2018 - Aug 2019</div>
-                <div class="card-title">Director of Food & Beverage</div>
-                <div class="card-subtitle">SIAM@SIAM DESIGN HOTEL BANGKOK</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Launched TAAN restaurant, achieving <strong>Michelin star recognition</strong>.</li>
-                        <li>Drove 22% revenue growth through rooftop restaurant strategic transformation.</li>
-                        <li>Implemented <strong>FSMS</strong> across all outlets.</li> 
-                        <li>Executed brand refresh to "Inspire Fun" concept targeting millennial travelers.</li> 
-                    </ul>
-                </div>
-            </div>
-            <div class="sop-card">
-                <div class="card-label">May 2017 - Oct 2018</div>
-                <div class="card-title">Director of Food & Beverage (Pre-Opening)</div>
-                <div class="card-subtitle">HOLIDAY INN & SUITES RAYONG CITY CENTRE</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Led concept development from ground up and managed full <strong>OS&E purchasing</strong>.</li>
-                        <li>Prepared simulation plans for all outlets to ensure smooth operation upon opening.</li> 
-                        <li>Developed F&B operating strategy aligned with brand business strategy.</li>
-                        <li>Recruited the full team and led the Grand Opening, exceeding Q1 revenue by 15%.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="sop-card">
-                <div class="card-label">Aug 2016 - May 2017</div>
-                <div class="card-title">Assistant Director of Food & Beverage</div>
-                <div class="card-subtitle">AVANI+ RIVERSIDE BANGKOK</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Managed flagship rooftop outlet <strong>SEEN</strong> and large banquet venues (1,152 sqm).</li> 
-                        <li>Specialized in complex logistics for <strong>Indian weddings</strong> and large-scale events.</li>
-                        <li>Responsible for quarterly menu updates, cost analysis, and market trend benchmarking.</li> 
-                        <li>Increased total event profit by 8% and guest satisfaction scores by 16%.</li>
-                    </ul>
+            
+            <div class="mt-12 text-center">
+                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Technical Proficiency</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 shadow-sm">Budgeting & CAPEX</span>
+                    <span class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 shadow-sm">Food Safety (FSMS)</span>
+                    <span class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 shadow-sm">Menu Engineering</span>
+                    <span class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 shadow-sm">TradingView & Market Indicators</span>
                 </div>
             </div>
         </div>
-        <footer>CV - Itthirat Naewla | Confidential Document</footer>
-    </div>
+    </section>
 
-    <div class="page">
-        <header style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
-            <div class="header-left"><h1 style="font-size: 16pt;">History & Education</h1></div>
-            <div class="header-right" style="margin-right: 0;"><div class="dept-tag">Page 3 / 3</div></div>
-        </header>
+    <section id="experience" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-corporate-navy font-heading mb-12">Professional Experience</h2>
 
-        <h2 class="section-header" style="margin-top: 0;"><i class="fa-regular fa-clock"></i> Management History</h2>
-        <div class="cv-stack">
-            <div class="sop-card">
-                <div class="card-label">Feb 2011 - Aug 2016</div>
-                <div class="card-title">F&B Manager / Asst. F&B Manager</div>
-                <div class="card-subtitle">CROWNE PLAZA BANGKOK LUMPINI PARK</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Supported rebranding from Pan Pacific to Crowne Plaza and F&B standards for <strong>AMEA region</strong>.</li>
-                        <li>Made strategic <strong>CAPEX funding recommendations</strong> for renovations.</li> 
-                        <li>Delivered 15% reduction in operational costs via inventory and procurement optimization.</li>
+            <div class="relative border-l-2 border-gray-200 ml-3 md:ml-6 space-y-12">
+                
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-5 h-5 bg-corporate-navy rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-gray-900 font-heading">Managing Director</h3>
+                        <span class="text-sm font-bold text-corporate-green bg-green-50 px-3 py-1 rounded-full">Jan 2025 - Present</span>
+                    </div>
+                    <h4 class="text-lg text-corporate-slate font-medium mb-4">R&B TRANSOLUTION</h4>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Leading strategic business transformation and delivering "Transolution" services. Focusing on re-branding, data-driven performance optimization (Menu Engineering, SWOT), and setting global service standards via SOPs.
+                    </p>
+                </div>
+
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-5 h-5 bg-gray-300 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-gray-900 font-heading">Director of Operations</h3>
+                        <span class="text-sm font-medium text-gray-500">Jan 2022 - Jan 2025</span>
+                    </div>
+                    <h4 class="text-lg text-corporate-slate font-medium mb-4">INTERCONTINENTAL KOH SAMUI RESORT</h4>
+                    <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 text-sm md:text-base">
+                        <li>Acting General Manager for 6 months, driving resort strategy.</li>
+                        <li>Oversaw 8 key departments including Front Office, F&B, Engineering, and Security.</li>
+                        <li>Increased guest satisfaction by 15% and F&B revenue by 18% post-COVID.</li>
                     </ul>
                 </div>
+
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-5 h-5 bg-gray-300 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-gray-900 font-heading">Co-Founder</h3>
+                        <span class="text-sm font-medium text-gray-500">Sep 2019 - Jul 2021</span>
+                    </div>
+                    <h4 class="text-lg text-corporate-slate font-medium mb-4">NOKHOOK PRODUCTION CO., LTD.</h4>
+                    <p class="text-gray-600 mb-2">Managed large-scale events and international client queries. Boosted event profitability by 45% through resource optimization.</p>
+                </div>
+
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-5 h-5 bg-gray-300 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-gray-900 font-heading">Director of F&B</h3>
+                        <span class="text-sm font-medium text-gray-500">Nov 2018 - Aug 2019</span>
+                    </div>
+                    <h4 class="text-lg text-corporate-slate font-medium mb-4">SIAM@SIAM DESIGN HOTEL BANGKOK</h4>
+                    <p class="text-gray-600 mb-2">Launched TAAN restaurant (Michelin star recognition). Drove 22% revenue growth and implemented FSMS across all outlets.</p>
+                </div>
+                
+                <div class="relative pl-8 md:pl-12 pt-4">
+                    <div class="absolute -left-[7px] top-6 w-1 h-16 bg-gray-200"></div>
+                    <p class="text-sm text-gray-500 italic">
+                        Previous roles include Director of F&B at Holiday Inn Rayong, Asst. Director at Avani+ Riverside, and Cluster Restaurant Manager at Banyan Tree Bangkok.
+                    </p>
+                </div>
+
             </div>
-            <div class="sop-card">
-                <div class="card-label">Nov 2005 - Feb 2011</div>
-                <div class="card-title">Cluster Restaurant Manager</div>
-                <div class="card-subtitle">BANYAN TREE HOTEL BANGKOK</div>
-                <div class="card-content">
-                    <ul>
-                        <li>Served as <strong>Balanced Scorecard Champion</strong> for the F&B department.</li> 
-                        <li>Selected for <strong>International Task Force</strong> at Banyan Tree Al Wadi, <strong>UAE</strong>.</li>
-                        <li>Managed multi-outlet operations including Thai, Japanese, and Lounge venues.</li>
-                    </ul>
+        </div>
+    </section>
+
+    <section class="py-20 bg-corporate-bg border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-corporate-navy font-heading mb-8 text-center">Education & Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-xs font-bold text-corporate-gold uppercase mb-2">Degree</div>
+                    <h3 class="font-bold text-gray-800">B.B.A. in Management</h3>
+                    <p class="text-sm text-gray-500 mt-1">Bangkok Thonburi University</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-xs font-bold text-corporate-gold uppercase mb-2">Diploma</div>
+                    <h3 class="font-bold text-gray-800">CTH Level 4 Diploma</h3>
+                    <p class="text-sm text-gray-500 mt-1">Hospitality Leadership</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-xs font-bold text-corporate-gold uppercase mb-2">Certificate</div>
+                    <h3 class="font-bold text-gray-800">Global Strategic Mgmt</h3>
+                    <p class="text-sm text-gray-500 mt-1">Sukhothai Thammathirat Univ.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-xs font-bold text-corporate-gold uppercase mb-2">Certificate</div>
+                    <h3 class="font-bold text-gray-800">Hospitality Mgmt 4.0</h3>
+                    <p class="text-sm text-gray-500 mt-1">Mahidol University</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <h2 class="section-header"><i class="fa-solid fa-graduation-cap"></i> Education & Certifications</h2>
-        <div class="cv-grid-2">
-            <div class="sop-card">
-                <div class="card-label">University</div>
-                <div class="card-title">B.B.A. in Management</div>
-                <div class="card-subtitle">BANGKOK THONBURI UNIVERSITY</div>
+    <footer id="contact" class="bg-corporate-navy text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold font-heading mb-8">Ready to transform your operations?</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <a href="tel:+66614107730" class="flex items-center gap-3 px-6 py-4 bg-white/10 rounded-lg hover:bg-white/20 transition backdrop-blur-sm">
+                    <i class="fa-solid fa-phone text-corporate-gold"></i>
+                    <span class="font-medium">+66 61 410 7730</span>
+                </a>
+                <a href="mailto:neawla@hotmail.com" class="flex items-center gap-3 px-6 py-4 bg-white/10 rounded-lg hover:bg-white/20 transition backdrop-blur-sm">
+                    <i class="fa-solid fa-envelope text-corporate-gold"></i>
+                    <span class="font-medium">neawla@hotmail.com</span>
+                </a>
             </div>
-            <div class="sop-card">
-                <div class="card-label">Professional</div>
-                <div class="card-title">CTH Level 4 Diploma</div>
-                <div class="card-subtitle">HOSPITALITY LEADERSHIP</div>
-            </div>
-            <div class="sop-card">
-                <div class="card-label">Dec 2025 | 10 Hours</div>
-                <div class="card-title">Global Strategic Management & Marketing</div>
-                <div class="card-subtitle">SUKHOTHAI THAMMATHIRAT UNIVERSITY</div>
-            </div>
-            <div class="sop-card">
-                <div class="card-label">Dec 2025 | 12 Hours</div>
-                <div class="card-title">Hospitality Management 4.0</div>
-                <div class="card-subtitle">MAHIDOL UNIVERSITY</div>
+
+            <div class="border-t border-white/10 pt-8 text-sm text-gray-400">
+                <p>&copy; 2026 Itthirat Naewla. All rights reserved.</p>
             </div>
         </div>
-
-        <div style="margin-top: 30px; text-align: center; color: #9aa0a6; font-size: 9pt;">
-            <p>Full Professional References Available Upon Request</p>
-        </div>
-        
-        <footer>All rights reserved. Redistribution or forwarding without prior consent is prohibited.</footer>
-    </div>
+    </footer>
 
 </body>
 </html>
